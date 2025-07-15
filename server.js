@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 4000;
 const DATA_PATH = path.join(__dirname, "projects.json");
 const TESTIMONIALS_PATH = path.join(__dirname, "testimonials.json");
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173", "https://muchtaralianwar.com"]
+}));
+
 app.use(express.json());
 
 // Load projects.json safely
