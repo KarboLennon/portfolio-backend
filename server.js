@@ -11,7 +11,9 @@ const DATA_PATH = path.join(__dirname, "projects.json");
 const TESTIMONIALS_PATH = path.join(__dirname, "testimonials.json");
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://muchtaralianwar.com"]
+  origin: ["https://muchtaralianwar.com", "http://localhost:5173"],
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  credentials: true,
 }));
 
 app.use(express.json());
