@@ -43,6 +43,10 @@ try {
   testimonials = [];
 }
 
+app.get("/", (req, res) => {
+  res.send("✅ Portfolio Backend API is running");
+});
+
 // === PROJECT ROUTES ===
 app.get("/api/projects", (req, res) => {
   res.json(projects);
@@ -107,6 +111,9 @@ app.delete("/api/testimonials/:id", (req, res) => {
     res.json({ message: "Deleted successfully" });
   });
 });
+
+const morgan = require("morgan");
+app.use(morgan("dev"));
 
 // === SERVER LISTEN ===
 app.listen(PORT, () => {
