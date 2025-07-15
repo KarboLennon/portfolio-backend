@@ -5,7 +5,7 @@ const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const DATA_PATH = path.join(__dirname, "projects.json");
 const TESTIMONIALS_PATH = path.join(__dirname, "testimonials.json");
@@ -112,3 +112,4 @@ app.delete("/api/testimonials/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
+
